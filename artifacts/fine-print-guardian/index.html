@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+    <!-- Primary SEO -->
+    <title>Fine-Print Guardian — Analyze contracts before you sign</title>
+    <meta name="description" content="Paste any contract and get a clause-by-clause risk breakdown. Red flags, caution clauses, and negotiation prompts — in seconds. No legal background needed." />
+    <meta name="keywords" content="contract analysis, lease review, terms of service, fine print, legal risk, clause checker" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://fine-print-guardian.replit.app/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Fine-Print Guardian" />
+    <meta property="og:title" content="Fine-Print Guardian — Read every clause before you sign" />
+    <meta property="og:description" content="Upload any contract. Instantly flag red flags, caution clauses, and get negotiation prompts. Know what you're signing." />
+    <meta property="og:url" content="https://fine-print-guardian.replit.app/" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Fine-Print Guardian — Know what you're signing" />
+    <meta name="twitter:description" content="Paste any contract. Get a clause-by-clause risk breakdown. No legal background needed." />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Fine-Print Guardian",
+      "url": "https://fine-print-guardian.replit.app/",
+      "description": "Upload any contract and get a clause-by-clause risk breakdown with red flags, caution clauses, and negotiation prompts.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- Hide Clerk "Development mode" badge via MutationObserver -->
+    <script>
+      (function () {
+        function hideDevBadge() {
+          document.querySelectorAll('*').forEach(function (el) {
+            try {
+              // Only target leaf nodes whose sole text is the badge label
+              if (el.children.length === 0 && /^(Development|Sandbox) mode$/i.test((el.textContent || '').trim())) {
+                // Walk up at most 3 levels to find the badge wrapper,
+                // stopping before we'd hide the auth card itself.
+                var target = el.parentElement;
+                for (var i = 0; i < 3; i++) {
+                  if (!target || target === document.body) break;
+                  var cls = target.className || '';
+                  target.style.setProperty('display', 'none', 'important');
+                  // Stop if we've found an element that looks like the badge wrapper
+                  if (typeof cls === 'string' && (cls.indexOf('badge') !== -1 || cls.indexOf('Badge') !== -1 || cls.indexOf('banner') !== -1)) break;
+                  target = target.parentElement;
+                }
+              }
+            } catch (_) {}
+          });
+        }
+        var obs = new MutationObserver(hideDevBadge);
+        function start() {
+          obs.observe(document.body, { childList: true, subtree: true });
+          hideDevBadge();
+        }
+        if (document.body) { start(); } else { document.addEventListener('DOMContentLoaded', start); }
+      })();
+    </script>
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/logo.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

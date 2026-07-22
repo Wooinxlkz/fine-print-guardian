@@ -1,0 +1,61 @@
+# ── Dependencies ──────────────────────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+
+# ── Build outputs ─────────────────────────────────────────────────────────────
+dist/
+tmp/
+out-tsc/
+*.tsbuildinfo
+.expo/
+.expo-shared/
+
+# ── Replit platform (never publish) ───────────────────────────────────────────
+.replit
+.replitignore
+.local/
+.cache/
+.agents/
+attached_assets/
+replit.md
+artifacts/mockup-sandbox/
+artifacts/api-server/.replit-artifact/
+artifacts/fine-print-guardian/.replit-artifact/
+scripts/post-merge.sh
+scripts/src/hello.ts
+
+# ── Secrets & environment ─────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+
+# ── IDEs ──────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-workspace
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# ── Coverage ──────────────────────────────────────────────────────────────────
+coverage/

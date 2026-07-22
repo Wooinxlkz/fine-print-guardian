@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Shield body -->
+  <path d="M16 2L4 7.5V16.5C4 23.8 9.4 30.1 16 32C22.6 30.1 28 23.8 28 16.5V7.5L16 2Z" fill="#1A2332"/>
+  <!-- Magnifying glass circle -->
+  <circle cx="15" cy="15.5" r="4.5" stroke="#F7F4EE" stroke-width="1.8" fill="none"/>
+  <!-- Magnifying glass handle -->
+  <line x1="18.5" y1="19" x2="22.5" y2="23" stroke="#F7F4EE" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Document lines inside glass -->
+  <line x1="12.5" y1="14.5" x2="17.5" y2="14.5" stroke="#F7F4EE" stroke-width="1.1" stroke-linecap="round" opacity="0.55"/>
+  <line x1="12.5" y1="17" x2="16" y2="17" stroke="#F7F4EE" stroke-width="1.1" stroke-linecap="round" opacity="0.55"/>
+</svg>

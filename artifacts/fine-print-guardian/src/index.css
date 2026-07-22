@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@layer theme, base, clerk, components, utilities;
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-primary-border: var(--sidebar-primary-border);
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-accent-border: var(--sidebar-accent-border);
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --color-safe: hsl(143 36% 35%);
+  --color-safe-foreground: hsl(143 36% 98%);
+  --color-caution: hsl(26 58% 51%);
+  --color-caution-foreground: hsl(26 58% 98%);
+  --color-redflag: hsl(0 43% 51%);
+  --color-redflag-foreground: hsl(0 43% 98%);
+
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  color-scheme: light;
+  --button-outline: rgba(26, 35, 50, 0.1);
+  --badge-outline: rgba(26, 35, 50, 0.05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(26, 35, 50, 0.03);
+  --elevate-2: rgba(26, 35, 50, 0.08);
+
+  /* Background: #F7F4EE */
+  --background: 40 31% 95%;
+  /* Foreground: #1A2332 */
+  --foreground: 218 31% 15%;
+  
+  --border: 40 15% 85%;
+  --input: 40 15% 85%;
+  --ring: 218 31% 15%;
+  
+  --card: 40 31% 95%;
+  --card-foreground: 218 31% 15%;
+  --card-border: 40 15% 85%;
+
+  --popover: 40 31% 95%;
+  --popover-foreground: 218 31% 15%;
+  --popover-border: 40 15% 85%;
+
+  --primary: 218 31% 15%;
+  --primary-foreground: 40 31% 95%;
+
+  --secondary: 40 15% 88%;
+  --secondary-foreground: 218 31% 15%;
+
+  --muted: 40 15% 90%;
+  --muted-foreground: 218 15% 40%;
+
+  --accent: 40 15% 88%;
+  --accent-foreground: 218 31% 15%;
+
+  /* Muted Brick Red */
+  --destructive: 0 43% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  --sidebar: 40 31% 95%;
+  --sidebar-foreground: 218 31% 15%;
+  --sidebar-border: 40 15% 85%;
+  --sidebar-primary: 218 31% 15%;
+  --sidebar-primary-foreground: 40 31% 95%;
+  --sidebar-accent: 40 15% 88%;
+  --sidebar-accent-foreground: 218 31% 15%;
+  --sidebar-ring: 218 31% 15%;
+
+  --app-font-sans: 'Inter', sans-serif;
+  --app-font-serif: 'Lora', Georgia, serif;
+  --app-font-mono: Menlo, monospace;
+  --radius: 0.25rem;
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+}
+
+.dark {
+  color-scheme: dark;
+
+  --button-outline: rgba(247, 244, 238, 0.1);
+  --badge-outline: rgba(247, 244, 238, 0.05);
+  --elevate-1: rgba(247, 244, 238, 0.03);
+  --elevate-2: rgba(247, 244, 238, 0.07);
+
+  /* Warm charcoal — base is ~#151210 (hsl 24 14% 7%) */
+  --background: 24 14% 7%;
+  --foreground: 40 22% 91%;
+
+  --border: 26 10% 18%;
+  --input: 26 10% 18%;
+  --ring: 40 22% 78%;
+
+  /* Cards sit one step above background */
+  --card: 26 12% 11%;
+  --card-foreground: 40 22% 91%;
+  --card-border: 26 10% 18%;
+
+  --popover: 26 12% 11%;
+  --popover-foreground: 40 22% 91%;
+  --popover-border: 26 10% 18%;
+
+  /* Primary = parchment in dark mode */
+  --primary: 40 22% 88%;
+  --primary-foreground: 24 14% 7%;
+
+  --secondary: 26 10% 16%;
+  --secondary-foreground: 40 22% 88%;
+
+  --muted: 26 10% 14%;
+  --muted-foreground: 30 8% 52%;
+
+  --accent: 26 10% 16%;
+  --accent-foreground: 40 22% 88%;
+
+  --destructive: 0 43% 56%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Sidebar is darker than page for visual layering */
+  --sidebar: 24 14% 5%;
+  --sidebar-foreground: 40 22% 84%;
+  --sidebar-border: 26 10% 14%;
+  --sidebar-primary: 40 22% 84%;
+  --sidebar-primary-foreground: 24 14% 7%;
+  --sidebar-accent: 26 10% 14%;
+  --sidebar-accent-foreground: 40 22% 84%;
+  --sidebar-ring: 40 22% 78%;
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+}
+
+/* ── Hide Clerk "Development mode" badge ── */
+@layer clerk {
+  .cl-badge,
+  .cl-devBadge,
+  .cl-internal-b3fm6y,
+  [data-localization-key="badge__sandboxMode"],
+  [data-localization-key="badge__devMode"] {
+    display: none !important;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-normal;
+  }
+}
+
+@layer utilities {
+  input[type='search']::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+}
+
+@media print {
+  /* Hide Shell sidebar and mobile header */
+  aside, header, nav, .print\:hidden {
+    display: none !important;
+  }
+  
+  /* Make main content take full width */
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+  
+  /* Basic print typography & page breaks */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .print-break-inside-avoid {
+    break-inside: avoid;
+  }
+  
+  .print-page-break-before {
+    page-break-before: always;
+  }
+
+  .print-stack {
+    display: block !important;
+  }
+  
+  .print-mb-4 {
+    margin-bottom: 1rem !important;
+  }
+
+  /* Override dark mode or other backgrounds to white */
+  * {
+    color: black !important;
+  }
+
+  /* Print specific text colors for annotations */
+  .text-\[\#B84C4C\] { color: #B84C4C !important; }
+  .text-\[\#C8773A\] { color: #C8773A !important; }
+  .text-\[\#3A7A52\] { color: #3A7A52 !important; }
+}
